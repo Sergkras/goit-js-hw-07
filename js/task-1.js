@@ -4,10 +4,12 @@ console.log(`В списке ${elemRef.children.length} категории.`);
 
 const itemRef = elemRef.querySelectorAll('.item');
 
-const resultLog = iterEl => {
-    const titleLog = iterEl.querySelector('h2');
-    const liLog = iterEl.querySelectorAll('li');
-    console.log(`Категория: ${titleLog.textContent}
-Количество элементов: ${liLog.length}`);
+const elemLog = item => {
+    const itemHeader = item.querySelector('h2');
+    const itemElements = item.querySelectorAll('ul li');
+
+    console.log(`Категория: ${itemHeader.textContent}
+Количество элементов: ${itemElements.length}`);
 };
-console.log(itemRef.forEach(iterEl => resultLog(iterEl)));
+
+console.log(itemRef.forEach(item => elemLog(item)));
